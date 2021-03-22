@@ -1,0 +1,10 @@
+<%-include("partials/header")-%>
+<h1>Compose</h1>
+<form action="/delete" method="POST">
+    <div class="form-group">
+       <label for="postTitle">Title to be deleted</label><br>
+        <input type="text" class="form-control" name="postTitle" id="postTitle" autocomplete="off"><br>
+        <button class="btn btn-primary" type="submit"> Delete </button>
+    </div>
+</form>
+<%-include("partials/footer")-%>

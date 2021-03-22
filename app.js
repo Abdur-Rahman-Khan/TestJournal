@@ -61,7 +61,23 @@ app.post("/compose",(req,res)=>{
   //console.log(posts);
   res.redirect("/home");
 });
-
+app.post("/delete",(req,res)=>{
+  let temp=-1;
+  for(var i=0;i<posts.length;i++){
+    if(_.lowerCase(req.body.postTitle)==_.lowerCase(posts[i].postTitle)){
+      console.log("Match Found");
+      temp=i;
+    }
+  }
+  if(temp!=-1){
+    posts.splice(temp,1);
+    console.log(posts);
+  }
+  res.redirect("/");
+});
+app.get("/delete",(req,res)=>{
+  res.render("delete");
+});
 
 
 
